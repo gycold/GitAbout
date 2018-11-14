@@ -12,4 +12,4 @@
 4. 远程仓库：<br>
 存在于git服务器。
 
-![仓库之间的操作](https://github.com/gycold/GitAbout/blob/master/pictures/仓库之间的操作 "仓库之间的操作")
+![仓库之间的操作](https://github.com/gycold/GitAbout/blob/master/pictures/仓库之间的操作.png "仓库之间的操作")
