@@ -31,3 +31,7 @@
 + Git 状态 untracked 和 not staged的区别
   1. untrack表示是新文件，没有被add过，是为跟踪的意思。
   2. not staged 表示add过的文件，即跟踪文件，再次修改没有add，就是没有暂存的意思
+
++ ```git commit --amend```，撤消刚才的提交
+
++ ```git reset commit id ```，完成Commit命令的撤销，但是不对代码修改进行撤销，可以直接通过git commit 重新提交对本地代码的修改

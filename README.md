@@ -13,3 +13,23 @@
 存在于git服务器。
 
 ![仓库之间的操作](https://github.com/gycold/GitAbout/blob/master/pictures/仓库之间的操作.png "仓库之间的操作")
+
+### 二、关于4个区的常用命令流
+| 命令 | 作用 |
+| :--- | :--- |
+| git add [file]或. | 将改动从工作区提交到暂存区 |
+| git commit -m "提交说明" | 将暂存区改动提交到本地仓库 |
+| ```git pull``` | 拉取远程仓库改动至工作区 |
+| `git fetch + git merge` | 拉取远程仓库改动至本地仓库，然后合并工作区 |
+| ``git push origin master`` | 一般使用简单写法```git push```：推送本地仓库改动至远程仓库 |
+
+
+---
+### 三、新建库命令
+1. ```git init```：                在当前目录新建一个Git代码库
+2. ```git init [project-name]```： 新建一个目录，将其初始化为Git代码库
+3. ```git clone [url]```：         下载一个项目和它的整个代码历史
+
+---
+### 四、Git配置命令
+1.
