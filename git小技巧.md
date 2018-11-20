@@ -35,3 +35,19 @@
 + ```git commit --amend```，撤消刚才的提交
 
 + ```git reset commit id ```，完成Commit命令的撤销，但是不对代码修改进行撤销，可以直接通过git commit 重新提交对本地代码的修改
+
++ git reset 参数
+
+| 命令 | 作用 |
+| :--- | :--- |
+| `git reset HEAD` | 任何事情都不会发生，这是因为我们告诉GIT重置这个分支到HEAD，而这个正是它现在所在的位置(上图的3e07fd8位置)。 |
+| `git reset HEAD~1	` | 意味着将HEAD从顶端的commit往下移动一个更早的commit |
+| `git reset HEAD~2` | 意味着将HEAD从顶端的commit往下移动两个更早的commit |
+
+| 命令 | 作用 |
+| :--- | :--- |
+| `soft` | –soft参数使git重置HEAD到另外一个commit。意味着工作区、暂存区都不会做任何变化，所有的在 HEAD和重置到的那个commit之间的所有变更集仍然在暂存区(index)区域中。 |
+| `hard` | –hard参数将会blow out everything。它将重置HEAD到另外一个commit，重置缓存区以便反映HEAD的变化，并且重置工作区也使得其完全匹配起来。这是一个比较危险的操作⚠️，具有破坏性！ |
+| `mixed(default）` | –mixed是reset的默认参数。它将重置HEAD到另外一个commit,并且重置缓存区。工作区不会被更改。所以所有从HEAD到你重置到的那个commit之间的所有变更仍然保存在工作区中，被标示为已变更 |
+
+  + 
