@@ -95,7 +95,7 @@ git的配置文件为```.gitconfig```，它可以在用户主目录下（全局�
 
 ---
 
-### 暂存区上的操作命令-
+### 五、暂存区上的操作命令-
 
 1. 提交文件到版本库
 
@@ -150,14 +150,37 @@ git的配置文件为```.gitconfig```，它可以在用户主目录下（全局�
 | `git pull` | 在跟踪分支上，拉取远程仓库的变化，并与本地分支合并 |
 | `git rebase` | 可以对某一段线性提交历史进行编辑、删除、复制、粘贴，可以把本地未push的分叉提交历史整理成直线。<br>使用rebase操作应该遵循的原则是：一旦分支中的提交对象发布到公共仓库，就千万不要对该分支进行rebase操作。 |
 | `git rebase -i  [startpoint]  [endpoint]` | -i的意思是--interactive，即弹出交互式的界面让用户编辑完成合并操作，[startpoint]和[endpoint]则指定了一个编辑区间，如果不指定[endpoint]，则该区间的终点默认是当前分支HEAD所指向的commit(注：该区间指定的是一个前开后闭的区间)。<br>如：`git rebase -i 36224db`或`git rebase -i HEAD~3`<br> |
-| `git rebase [rebase-branch] [branch-name]` |  |
-| `` |  |
-| `` |  |
-| `` |  |
-| `` |  |
-| `` |  |
-| `` |  |
-| `` |  |
+| `git rebase [rebase-branch] [branch-name]` | 如`git rebase master server`，将特性分支server提交的改变在基底分支master上重演一遍 |
+| `git rebase [startpoint] [endpoint] --onto [branchName]` | 即将某一段commit粘贴到另一个分支上。<br>[startpoint]和[endpoint]仍然和上一个命令一样指定了一个编辑区间(前开后闭)，--onto的意思是要将该指定的提交复制到哪个分支上 |
+
+---
+
+### 六、本地仓库上的操作
+
+| 命令 | 作用 |
+| :--- | :--- |
+| `git remote` | 查看本地仓库关联的远程仓库 |
+| `git remote add [remote-name] [url]` | 添加远程仓库，一般会取一个简短的别名 |
+| `git fetch [remote-name]` | 从远程仓库中抓取本地仓库中没有的更新。<br>使用fetch只是将远端数据拉到本地仓库，并不自动合并到当前工作分支，只能人工合并。<br>如果设置了某个分支关联到远程仓库的某个分支的话，可以使用git pull来拉去远程分支的数据，然后将远端分支自动合并到本地仓库中的当前分支 |
+| `git push [remote-name] [branch-name]` | 将本地仓库某分支推送到远程仓库上 |
+| `git push [remote-name] [local-branch]:[remote-branch]` | 将本地分支推送到远程仓库的不同名分支 |
+| `git push [romote-name] :[remote-branch]` | 删除远程分支。<br>如`git push origin :serverfix`，这里省略了本地分支，也就相当于将空白内容推送给远程分支，就等于删掉了远程分支。 |
+| `git push` | git push的一般形式为：git push <远程主机名> <本地分支名>  <远程分支名> 。<br>如果当前分支只有一个远程分支，那么主机名都可以省略，形如 git push，可以使用`git branch -r` ，查看远程的分支名 |
+| `git remote rename [old-name] [new-name]` | 修改某个远程仓库在本地的简称 |
+| `git remote rm [remote-name]` | 移除远程仓库 |
+
+---
+
+### 七、忽略文件.gitignore
+
+| 命令 | 作用 |
+| :--- | :--- |
+| `*.a` | 忽略所有 .a 结尾的文件 |
+| `!lib.a` | lib.a 除外 |
+| `/TODO` | 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO |
+| `build/` | 忽略 build/ 目录下的所有文件 |
+| `doc/*.txt` | 忽略 doc/notes.txt 但不包括 doc/server/arch.txt |
+| `doc/**/*.txt` | 忽略 doc/ 目录下所有扩展名为 txt 的文件 |
 
 
 | 命令 | 作用 |
