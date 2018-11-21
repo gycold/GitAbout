@@ -107,7 +107,7 @@ git的配置文件为```.gitconfig```，它可以在用户主目录下（全局�
 | `git commit [file1] [file2] ... -m [commit info]` | 提交暂存区的指定文件到本地仓库，每次提交都会产生一个commit id |
 | `git commit -a` | 将所有已经使用git管理过的文件暂存后一并提交至本地仓库，跳过add到暂存区的过程，每次提交都会产生一个commit id |
 | `git commit --amend` | 提交文件时，发现漏掉几个文件，或者注释写错了，可以撤销上一次提交，即amend提供对最后一次commit的反悔，但是如果已经push过了，那么其历史最后一次，永远也不能修改了 |
-
+| `git rebase -i HEAD~3` | 表示要修改当前版本的倒数第三次状态 |
 
 2. 查看信息
 
