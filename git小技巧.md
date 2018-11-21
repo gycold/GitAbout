@@ -49,3 +49,5 @@
 | `soft` | –soft参数使git重置HEAD到另外一个commit。意味着工作区、暂存区都不会做任何变化，所有的在 HEAD和重置到的那个commit之间的所有变更集仍然在暂存区(index)区域中。 |
 | `hard` | –hard参数将会blow out everything。它将重置HEAD到另外一个commit，重置缓存区以便反映HEAD的变化，并且重置工作区也使得其完全匹配起来。这是一个比较危险的操作⚠️，具有破坏性！ |
 | `mixed(default）` | –mixed是reset的默认参数。它将重置HEAD到另外一个commit,并且重置缓存区。工作区不会被更改。所以所有从HEAD到你重置到的那个commit之间的所有变更仍然保存在工作区中，被标示为已变更 |
+
++ 查询某次历史提交的修改内容，首先`git log`显示历史的提交列表，然后`git show <commit-hashId>`便可以显示某次提交的修改内容；使用`git show <commit-hashId> filename`可以显示某次提交的某个内容的修改信息。
