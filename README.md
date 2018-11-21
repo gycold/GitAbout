@@ -188,13 +188,13 @@ git的配置文件为```.gitconfig```，它可以在用户主目录下（全局�
 
 1. 集中式工作流：<br>
  以中央仓库为集中点，所有人工作在master一个分支上，团队在此分支上拉取、提交、解决冲突。<br>
- <a href="http://blog.jobbole.com/76847/" target="_blank">集中式工作流-详细介绍</a>
+ <a href="http://blog.jobbole.com/76847" target="_blank">集中式工作流-详细介绍</a>
 
 2. 功能分支工作流：<br>
  按照不同功能划分分支，不同功能研发组员在各自的分支上研发，master分支代表正式项目的历史。<br>
  首先研发成员发起`Pull Request`，流程走到`code review`（如果有的话），`Pull Request`确认无误被接受，然后审核人员首先确认一下本地master分支和上游master分支保持一致，再做合并，合并完毕同步本地master到上游master。<br>
  功能研发完毕可以将无用分支删除。<br>
- [功能分支工作流-详细介绍](http://blog.jobbole.com/76857/?_blank)
+ [功能分支工作流-详细介绍](http://blog.jobbole.com/76857?_blank)
 
 3. Gitflow工作流：<br>
  功能分支工作流使得项目开发异常灵活，但是给分支的管理带来了不便，Gitflow在此基础上做演变，是大型项目常用模式。<br>
