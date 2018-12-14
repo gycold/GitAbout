@@ -51,3 +51,9 @@
 | `mixed(default）` | –mixed是reset的默认参数。它将重置HEAD到另外一个commit,并且重置缓存区。工作区不会被更改。所以所有从HEAD到你重置到的那个commit之间的所有变更仍然保存在工作区中，被标示为已变更 |
 
 + 查询某次历史提交的修改内容，首先`git log`显示历史的提交列表，然后`git show <commit-hashId>`便可以显示某次提交的修改内容；使用`git show <commit-hashId> filename`可以显示某次提交的某个内容的修改信息。
+
++ 删除某个全局配置项
+  1. 查看Git所有配置：git config --list
+  2. 删除全局配置项：
+    1. 终端执行命令：git config --global --unset user.name
+    2. 编辑配置文件：git config --global --edit
