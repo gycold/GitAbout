@@ -1,3 +1,5 @@
++ 文档红色：未add，仅仅存在于工作区；文档绿色：已add未commit，文档在暂存区有了关联记录；文档白色：已commit，文档在本地仓库区有了关联记录；文档蓝色：文档在本地仓库有关联记录，且在工作区有了变动。
+
 + git log --graph --pretty=oneline --abbrev-commit 查看分支及主干流程图
 
 + git 退出查看log：英文状态下按Q
@@ -32,9 +34,12 @@
   1. untrack表示是新文件，没有被add过，是为跟踪的意思。
   2. not staged 表示add过的文件，即跟踪文件，再次修改没有add，就是没有暂存的意思
 
-+ ```git commit --amend```，撤消刚才的提交
++ `git commit --amend`，修改注释
 
-+ ```git reset commit id ```，完成Commit命令的撤销，但是不对代码修改进行撤销，可以直接通过git commit 重新提交对本地代码的修改
++ `git reset --soft HEAD^`，撤销最近的commit，HEAD~2，撤销最近两次commit。<br>
+  `--mixed`：不删除工作空间改动代码，撤销commit，并且撤销`git add .` 操作这个为默认参数，`git reset --mixed HEAD^` 和 `git reset HEAD^` 效果是一样的。<br>
+  `--soft`：不删除工作空间改动代码，撤销commit，不撤销`git add .` <br>
+  `--hard`：删除工作空间改动代码，撤销commit，撤销`git add .` 注意完成这个操作后，就恢复到了上一次的commit状态。
 
 + git reset 参数
 
