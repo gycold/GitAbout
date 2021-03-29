@@ -203,7 +203,7 @@ git的配置文件为```.gitconfig```，它可以在用户主目录下（全局�
 | `git branch --merged` | 查看哪些分支已经合并到当前分支 |
 | `git branch --no-merged` | 查看当前哪些分支还没有合并到当前分支 |
 | `git merge [remote-name]/[branch-name]` | 把远程分支合并到当前分支。<br>如果是单线的历史分支不存在任何需要解决的分歧，只是简单的将HEAD指针前移，所以这种合并过程可以称为快进（Fast forward），而如果是历史分支是分叉的，会以当前分叉的两个分支作为两个祖先，创建新的提交对象；如果在合并分支时，遇到合并冲突需要人工解决后，再才能提交 |
-| `git checkout -b [local_branch-name] [origin-name]/[remote_branch-name]` | 在远程分支的基础上创建新的本地分支 |
+| `git checkout -b [local_branch-name] [origin-name]/[remote_branch-name]` | 在远程分支的基础上创建新的本地分支，而后便可拉取该分支代码 |
 | `git pull` | 在跟踪分支上，拉取远程仓库的变化，并与本地分支合并 |
 | `git rebase` | 可以对某一段线性提交历史进行编辑、删除、复制、粘贴，可以把本地未push的分叉提交历史整理成直线。<br>使用rebase操作应该遵循的原则是：一旦分支中的提交对象发布到公共仓库，就千万不要对该分支进行rebase操作。 |
 | `git rebase -i  [startpoint]  [endpoint]` | -i的意思是--interactive，即弹出交互式的界面让用户编辑完成合并操作，[startpoint]和[endpoint]则指定了一个编辑区间，如果不指定[endpoint]，则该区间的终点默认是当前分支HEAD所指向的commit(注：该区间指定的是一个前开后闭的区间)。<br>如：`git rebase -i 36224db`或`git rebase -i HEAD~3`<br> |
@@ -221,9 +221,10 @@ git的配置文件为```.gitconfig```，它可以在用户主目录下（全局�
 | `git remote` | 查看本地仓库关联的远程仓库 |
 | `git remote add [remote-name] [url]` | 添加远程仓库，一般会取一个简短的别名 |
 | `git fetch [remote-name]` | 从远程仓库中抓取本地仓库中没有的更新。<br>使用fetch只是将远端数据拉到本地仓库，并不自动合并到当前工作分支，只能人工合并。<br>如果设置了某个分支关联到远程仓库的某个分支的话，可以使用git pull来拉去远程分支的数据，然后将远端分支自动合并到本地仓库中的当前分支 |
-| `git push [remote-name] [branch-name]` | 将本地仓库某分支推送到远程仓库上 |
-| `git push [remote-name] [local-branch]:[remote-branch]` | 将本地分支推送到远程仓库的不同名分支 |
-| `git push [romote-name] :[remote-branch]` | 删除远程分支。<br>如`git push origin :serverfix`，这里省略了本地分支，也就相当于将空白内容推送给远程分支，就等于删掉了远程分支。 |
+| `git push [remote-name] [branch-name]` | 将本地仓库某分支推送到远程仓库上,远程分支名同本地分支名 |
+| `git push [remote-name] [local-branch]:[remote-branch]` | 将本地分支推送到远程仓库的不同名或同名分支 |
+| `git push [romote-name] :[remote-branch]`，或者`git push origin --delete dev` | 删除远程分支。<br>如`git push origin :serverfix`，这里省略了本地分支，也就相当于将空白内容推送给远程分支，就等于删掉了远程分支。 |
+| `git branch -D dev` | 删除本地分支 |
 | `git push` | git push的一般形式为：git push <远程主机名> <本地分支名>  <远程分支名> 。<br>如果当前分支只有一个远程分支，那么主机名都可以省略，形如 git push，可以使用`git branch -r` ，查看远程的分支名 |
 | `git remote rename [old-name] [new-name]` | 修改某个远程仓库在本地的简称 |
 | `git remote rm [remote-name]` | 移除远程仓库 |
