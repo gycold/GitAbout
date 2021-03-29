@@ -221,7 +221,7 @@ git的配置文件为```.gitconfig```，它可以在用户主目录下（全局�
 | `git remote` | 查看本地仓库关联的远程仓库 |
 | `git remote add [remote-name] [url]` | 添加远程仓库，一般会取一个简短的别名 |
 | `git fetch [remote-name]` | 从远程仓库中抓取本地仓库中没有的更新。<br>使用fetch只是将远端数据拉到本地仓库，并不自动合并到当前工作分支，只能人工合并。<br>如果设置了某个分支关联到远程仓库的某个分支的话，可以使用git pull来拉去远程分支的数据，然后将远端分支自动合并到本地仓库中的当前分支 |
-| `git push [remote-name] [remote-branch]` | 将本地仓库某分支推送到远程仓库上,如果远程分支不存在，则新建 |
+| `git push [remote-name] [remote-branch]` | 新建远程分支 |
 | `git push [remote-name] [local-branch]:[remote-branch]` | 将本地分支推送到远程仓库的不同名或同名分支 |
 | `git push [romote-name] :[remote-branch]`，或者`git push origin --delete dev` | 删除远程分支。<br>如`git push origin :serverfix`，这里省略了本地分支，也就相当于将空白内容推送给远程分支，就等于删掉了远程分支。 |
 | `git branch -D dev` | 删除本地分支 |
