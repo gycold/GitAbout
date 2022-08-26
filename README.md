@@ -256,7 +256,7 @@ git的配置文件为```.gitconfig```，它可以在用户主目录下（全局�
 
 1. 集中式工作流：
  以中央仓库为集中点，所有人工作在master一个分支上，团队在此分支上拉取、提交、解决冲突。<br>
- <a href="http://blog.jobbole.com/76847" target="_blank">集中式工作流-详细介绍</a>
+ <a href="https://www.cnblogs.com/qq-2780619724/p/15423505.html" target="_blank">集中式工作流-详细介绍</a>
 
 <span id="eight2">
 
@@ -264,16 +264,16 @@ git的配置文件为```.gitconfig```，它可以在用户主目录下（全局�
  按照不同功能划分分支，不同功能研发组员在各自的分支上研发，master分支代表正式项目的历史。<br>
  首先研发成员发起`Pull Request`，流程走到`code review`（如果有的话），`Pull Request`确认无误被接受，然后审核人员首先确认一下本地master分支和上游master分支保持一致，再做合并，合并完毕同步本地master到上游master。<br>
  功能研发完毕可以将无用分支删除。<br>
- <a href="http://blog.jobbole.com/76857" target="_blank">功能分支工作流-详细介绍</a>
+ <a href="https://www.cnblogs.com/qq-2780619724/p/15425795.html" target="_blank">功能分支工作流-详细介绍</a>
 
 <span id="eight3">
 
 3. Gitflow工作流：
  功能分支工作流使得项目开发异常灵活，但是给分支的管理带来了不便，Gitflow在此基础上做演变，是大型项目常用模式。<br>
- <a href="http://blog.jobbole.com/76867" target="_blank">Gitflow工作流-详细介绍</a>
+ <a href="https://www.cnblogs.com/qq-2780619724/p/15427126.html" target="_blank">Gitflow工作流-详细介绍</a>
 
 <span id="eight4">
 
 4. Forking工作流：
  与前面3中工作流不同，该方式拥有多个服务端仓库，即：每个coder拥有本地和远程两个分支，远程仓库是公开的。<br>
- <a href="http://blog.jobbole.com/76861" target="_blank">Forking工作流-详细介绍</a>
+ <a href="https://blog.csdn.net/kelencc/article/details/119886400" target="_blank">Forking工作流-详细介绍</a>
